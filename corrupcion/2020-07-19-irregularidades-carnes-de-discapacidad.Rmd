@@ -8,7 +8,7 @@ date: '2020-07-19'
 ####                   Descargar los datos                 ####
 ###############################################################
 
-if(!require(readstata13)) install.packages("data.table", repos = "http://cran.us.r-project.org")
+if(!require(readstata13)) install.packages("readstata13", repos = "http://cran.us.r-project.org")
 if(!require(tidyverse)) install.packages("tidyverse", repos = "http://cran.us.r-project.org")
 
 # Le damos un nombre al url
