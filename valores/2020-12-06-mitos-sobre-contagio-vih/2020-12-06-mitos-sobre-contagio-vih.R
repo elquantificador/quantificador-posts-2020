@@ -71,7 +71,7 @@ info_sida <- na.omit(info_sida)
 resultados <- sapply(info_sida[,2:6], weighted.mean, w = info_sida$fexp)
 resultados <- data.frame(pregunta = names(resultados), freq = resultados)
 
-# Hacemos los gr??ficos
+# Hacemos los gráficos
 preg_etiqueta <- c("Darle la mano a alguien \n que tiene VIH/SIDA?", 
                    "Besar en la frente a alguien \n que tiene VIH/SIDA?",
                    "Ser picado por un mosquito o zancudo?", 
