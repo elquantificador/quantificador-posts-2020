@@ -6,7 +6,7 @@ date: '2020-05-09'
 
 ```{r, eval=FALSE}
 
-# Este es el código que descarga los twits
+# Este es el código que descarga los tuits
 library(rtweet)
 
 recorte_1 <- search_tweets("#NoAlRecorte", n = 12000, include_rts = FALSE)
