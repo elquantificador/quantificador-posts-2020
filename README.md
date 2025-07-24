@@ -4,7 +4,8 @@ Código y archivos RMarkdown para reproducir los artículos de El Quantificador 
 
 ## Estructura del repositorio
 
-La descripción de cada carpeta principal se encuentra en [docs/structure.md](docs/structure.md).
+La descripción de cada carpeta principal se encuentra en [docs/estructura.md](docs/estructura.md).
+Para una versión en inglés puedes revisar [docs/structure.md](docs/structure.md).
 
 ## Ejecutar los análisis
 
