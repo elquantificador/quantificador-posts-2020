@@ -83,7 +83,7 @@ resultados$pregunta <- preg_etiqueta
 resultados %>% ggplot(aes(x = reorder(pregunta, freq), y = freq)) + 
   geom_bar(stat = "identity", fill = "skyblue" ) +
   coord_flip() + scale_y_continuous(labels = percent, limits = c(0, 0.6)) + 
-  labs(title = "??Piensa usted que una persona puede \n infectarse del VIH/SIDA al ...:", x = "", y = "") +
+  labs(title = "¿Piensa usted que una persona puede \n infectarse del VIH/SIDA al ...:", x = "", y = "") +
   geom_text(aes(label= scales::percent(freq, accuracy = 0.1)), hjust=-0.2, size=3, fontface = "italic") + 
   theme_ipsum() + theme(legend.position = "none") + 
   theme(plot.title = element_text(color="black", size=14, face="bold.italic"),
