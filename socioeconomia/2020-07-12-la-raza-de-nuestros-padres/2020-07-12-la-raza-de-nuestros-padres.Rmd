@@ -10,7 +10,8 @@ options("RStata.StataPath" = "\"C:\\Program Files (x86)\\Stata14\\StataSE-64\"")
 
 ```{r, include=FALSE}
 #Lamentablemente mis habilidades para manipula datos en R son muy limitadas, uso Stata en su mayoría. Por eso, todo el "data mangement" lo he hecho en Stata. Solo la última parte que es una visualización está en R. 
-stata("C:\\Users\\mfayt\\Google Drive\\Quantificador Marco\\Desempleo y autoidentificación étnica\\Autoidentificación étnica padres a hijos.do")
+#Ruta relativa a esta carpeta, que es el directorio de trabajo al renderizar el .Rmd.
+stata("Autoidentificación étnica padres a hijos.do")
 ```
 
 ```{r, echo=FALSE, message = FALSE, fig.height=8}

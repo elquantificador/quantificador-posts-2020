@@ -13,7 +13,8 @@ library(grid)
 library(ggplot2)
 library(cowplot)
 
-logo_path <- "C:\\Users\\user\\Documents\\GitHub\\quantificador-posts-2020\\economia\\2020-07-03-ecuatorianos-mas-altos-ganan-mas\\quantificador.png"
+# Ruta relativa a la raiz del repositorio (directorio de trabajo, ver README)
+logo_path <- "economia/2020-07-03-ecuatorianos-mas-altos-ganan-mas/quantificador.png"
 
 # 1) Fit regressions by sexo and build equation labels (NO "log(ingreso) =" text)
 coefs <- df %>%
@@ -81,7 +82,7 @@ p1 <- ggdraw() +
 p1
 
 ggsave(
-  filename = "C:\\Users\\user\\Documents\\GitHub\\quantificador-posts-2020\\economia\\2020-07-03-ecuatorianos-mas-altos-ganan-mas\\grafico_2026_instagram_1080x1350.png",
+  filename = "economia/2020-07-03-ecuatorianos-mas-altos-ganan-mas/grafico_2026_instagram_1080x1350.png",
   plot = p1,
   width = 4, height = 5, units = "in",
   dpi = 270

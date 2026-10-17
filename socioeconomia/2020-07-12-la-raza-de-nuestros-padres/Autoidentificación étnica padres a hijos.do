@@ -6,7 +6,9 @@
 //https://www.ecuadorencifras.gob.ec/documentos/web-inec/EMPLEO/2019/Diciembre/BDD_ENEMDU_2019_12_SPSS.zip
 
 
-use "C:\Users\mfayt\Google Drive\Quantificador Marco\Desempleo y autoidentificación étnica\enemdu_person_201912.dta", clear
+// Rutas relativas a esta carpeta: ejecuta el do-file con ella como directorio de trabajo.
+// enemdu_person_201912.dta se obtiene con la descarga manual indicada arriba.
+use "enemdu_person_201912.dta", clear
 
 //Para esta pequeña idea, solo quiero hogares donde pueda identificar padres/madres e hijos.
 //Para hacer eso, por la estructura de la encuesta, puedo identificar a esos hogares donde hay hijos presentes!
@@ -97,5 +99,5 @@ drop if tag == 0
 
 tab iden_pro iden_hijoa, row nofreq
 keep iden_pro iden_hijoa
-save "C:\Users\mfayt\Google Drive\Quantificador Marco\Desempleo y autoidentificación étnica\enemdu_person_201912_quantidep.dta", replace
+save "enemdu_person_201912_quantidep.dta", replace
 

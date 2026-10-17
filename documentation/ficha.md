@@ -56,9 +56,13 @@ cerrar el repositorio, según lo que se verificó en los archivos:
   Valores se retiró, así que ese artículo no se puede reproducir desde aquí.
 - Los scripts leen sus datos desde URL de GitHub del repositorio original
   (`aquijanoruiz/elquantificador_posts`), no desde las copias locales.
-- `economia/2020-07-03-ecuatorianos-mas-altos-ganan-mas/grafico_2026.R` y la
-  parte de Stata de `socioeconomia/2020-07-12-la-raza-de-nuestros-padres/`
-  usan rutas absolutas de otras computadoras.
+- La base de la ENEMDU que lee el `.do` de
+  `socioeconomia/2020-07-12-la-raza-de-nuestros-padres/`
+  (`enemdu_person_201912.dta`) no está en el repositorio: se obtiene con la
+  descarga manual del INEC que indica el propio `.do`.
+- `economia/2020-07-03-.../grafico_2026.R` usa un data frame `df` (columnas
+  `linc`, `estatura`, `sexo`) que ningún archivo del repositorio crea; hay que
+  prepararlo antes de ejecutarlo.
 
 ## Pregunta y alcance
 
@@ -106,9 +110,10 @@ La lista completa, con una fila por fuente, está en `documentation/fuentes.csv`
 | Límites provinciales y cantonales del Ecuador, y de las Américas | Provincias y cantones: archivos con la nomenclatura de GADM (`ECU_adm1`, `ECU_adm2`), sin documentar en el repositorio. Américas: Carlos Efraín Porto Tapiquén, Orogénesis Soluciones Geográficas (Venezuela), basado en formas de ESRI (según el README del zip) | Américas: 2015; versión de GADM no documentada | Copias `ECU_PROVINCE_SHAPEFILE.zip`, `ECU_CANTON_SHAPEFILE.zip` y `AMERICAS_SHAPEFILE.zip` | `salud/2020-03-22-.../*.Rmd`, `salud/2020-04-01-.../*.Rmd`, `salud/2020-09-13-.../*.Rmd` |
 
 Los enlaces oficiales que citan el repositorio o los artículos están en
-`documentation/fuentes.csv`. Las descargas manuales (ENEMDU) no se pueden
-repetir desde el repositorio: el `.do` y el `.Rmd` de la raza de los padres
-llaman a rutas de la computadora de Marco Faytong.
+`documentation/fuentes.csv`. La descarga manual (ENEMDU) no se puede
+repetir desde el repositorio: el `.do` de la raza de los padres espera
+`enemdu_person_201912.dta` en su misma carpeta, y ese archivo hay que generarlo
+con la descarga del INEC.
 
 ## Salidas
 
@@ -118,8 +123,8 @@ como archivos producidos por el código o preparados antes del análisis:
 
 - `economia/2020-07-03-ecuatorianos-mas-altos-ganan-mas/grafico_2026_instagram_1080x1350.png`:
   gráfico de la relación entre estatura e ingreso, con el logo, en formato de
-  Instagram; lo escribe `grafico_2026.R` (con una ruta absoluta de otra
-  computadora).
+  Instagram; lo escribe `grafico_2026.R` (con una ruta relativa a la raíz del
+  repositorio).
 - `instagram_1080x1350.png` (en la raíz): imagen en el mismo formato; ningún
   script del repositorio la genera.
 - `socioeconomia/2020-07-12-la-raza-de-nuestros-padres/2020-07-12-la-raza-de-nuestros-padres.dta`:
@@ -159,8 +164,13 @@ según el README anterior:
      2020-01-10 a 2020-04-25.
    - `economia/2020-05-09-...` no descarga tuits (`eval=FALSE`); lee
      `recorte.rds`.
-   - `socioeconomia/2020-07-12-...` invoca Stata 14 con rutas de
-     `C:\Users\mfayt\...`; el análisis posterior lee el `.dta` versionado.
+   - `socioeconomia/2020-07-12-...` invoca Stata 14 con rutas relativas a su
+     carpeta (el directorio de trabajo al renderizar el `.Rmd`); necesita
+     `enemdu_person_201912.dta` en esa carpeta y la ruta de instalación de
+     Stata que fija el `.Rmd` en `RStata.StataPath`. El análisis posterior lee
+     el `.dta` versionado.
+   - `economia/2020-07-03-.../grafico_2026.R` usa rutas relativas a la raíz
+     del repositorio, por lo que se ejecuta con `source()` desde allí (paso 1).
    - `valores/2020-11-02-...` no se puede reproducir (ver Estado).
 
 ## README anterior
