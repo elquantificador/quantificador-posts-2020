@@ -1,10 +1,15 @@
 cff-version: 1.2.0
 message: "Si usas este material, cítalo con estos datos."
-title: "Código y archivos RMarkdown para reproducir los artículos de El Quantificador del año 2020 (Marzo-Diciembre 2020)"
+title: "Reproduciendo los posts de El Quantificador (Marzo - Diciembre 2020)"
 type: dataset
 authors:
-  - name: "El Quantificador (LIDE)"
-    website: "https://elquantificador.org/"
+  - family-names: "Quijano Ruiz"
+    given-names: "Alonso"
+  - family-names: "Borja Plaza"
+    given-names: "Leonel"
+  - family-names: "Faytong Haro"
+    given-names: "Marco"
+  - family-names: "Bazurto Blacio"
+    given-names: "Zulemma"
 repository-code: "https://github.com/elquantificador/quantificador-posts-2020"
 license: MIT
-# Agrega aquí a las personas autoras del artículo cuando corresponda.
