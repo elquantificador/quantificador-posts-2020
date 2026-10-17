@@ -17,3 +17,17 @@ Para una versión en inglés puedes revisar [docs/structure.md](docs/structure.m
 ### Datos necesarios
 
 Las carpetas de cada artículo contienen los conjuntos de datos específicos que utilizan. Los archivos compartidos (por ejemplo ENEMDU o ENSANUT) están comprimidos en `databases/`. Varios RMarkdown descargan automáticamente información pública cuando es necesario.
+
+
+## Licencias y cómo citar
+
+- **Código:** [MIT](LICENSE).
+- **Texto, figuras y tablas:** [CC BY-NC 4.0](LICENSE-content).
+- **Datos de terceros:** conservan los términos de su fuente
+  ([aviso](DATA-NOTICE.md)).
+- **Nombre y logotipos:** todos los derechos reservados.
+
+Las cifras y resultados pueden citarse libremente. Menciona a los autores y a
+El Quantificador (LIDE) y enlaza la publicación original. Los usos comerciales
+de gráficos, tablas o texto requieren autorización previa:
+elquantificador@laboratoriolide.org. Ver también `CITATION.cff`.
